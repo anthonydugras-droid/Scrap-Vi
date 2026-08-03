@@ -1,0 +1,45 @@
+name: Vinted Watch
+
+on:
+  schedule:
+    # Toutes les 15 minutes. GitHub n'autorise pas moins de 5 min, et les
+    # crons sont "best effort" (peuvent avoir un peu de retard aux heures
+    # de forte charge). Modifie ce cron si tu veux une autre fréquence,
+    # ex: "*/5 * * * *" pour toutes les 5 minutes.
+    - cron: "*/15 * * * *"
+  workflow_dispatch: {}  # permet de le lancer manuellement depuis l'onglet Actions
+
+permissions:
+  contents: write  # nécessaire pour committer seen_items.json
+
+concurrency:
+  group: vinted-watch
+  cancel-in-progress: false  # on ne veut jamais annuler un run en cours
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout du repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Installer les dépendances
+        run: pip install -r requirements.txt
+
+      - name: Lancer le watcher (une seule passe)
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: python vinted_watcher.py --once
+
+      - name: Sauvegarder l'état (seen_items.json)
+        run: |
+          git config user.name "vinted-watch-bot"
+          git config user.email "actions@github.com"
+          git add seen_items.json
+          git diff --staged --quiet || git commit -m "update seen_items.json [skip ci]"
+          git push
