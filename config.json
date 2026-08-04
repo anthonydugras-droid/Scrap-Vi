@@ -7,15 +7,29 @@
 
 
 {
-  "name": "Meermin 44",
-  "keywords": "meermin",
-  "price_min": 0,
-  "price_max": 120,
-  "size_ids": [788],
-  "brand_ids": [347638],
-  "status_ids": [1, 6],
-  "catalog_ids": []
-}
+  "searches": [
+    {
+      "name": "Meermin 44",
+      "keywords": "meermin",
+      "price_min": 0,
+      "price_max": 120,
+      "size_ids": [788],
+      "brand_ids": [347638],
+      "status_ids": [1, 6],
+      "catalog_ids": []
+    },
+    {
+      "name": "Chemise lin",
+      "keywords": "chemise lin",
+      "price_min": 0,
+      "price_max": 500,
+      "size_ids": [209],
+      "brand_ids": [15],
+      "status_ids": [2, 1, 6],
+      "catalog_ids": [536],
+      "color_ids": [12, 20, 16, 10, 30]
+    }
   ]
 }
+
 
