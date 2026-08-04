@@ -98,6 +98,9 @@ class VintedClient:
             params["status_ids"] = search_cfg["status_ids"]
         if search_cfg.get("catalog_ids"):
             params["catalog_ids"] = search_cfg["catalog_ids"]
+        if search_cfg.get("color_ids"):
+            params["color_ids"] = search_cfg["color_ids"]
+
 
         url = f"{self.base_url}/api/v2/catalog/items"
         resp = self.session.get(url, params=params, timeout=15)
