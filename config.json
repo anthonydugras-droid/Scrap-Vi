@@ -1,12 +1,7 @@
 {
-  "_comment": "Le webhook Discord ne doit PAS être mis ici si le repo est public : utilise le secret GitHub DISCORD_WEBHOOK_URL à la place (voir README). Ce champ sert seulement pour un usage en local.",
   "discord_webhook_url": "https://discord.com/api/webhooks/COLLE_TON_ID/COLLE_TON_TOKEN",
   "poll_interval_seconds": 60,
   "vinted_domain": "www.vinted.fr",
-  "searches": [
-
-
-{
   "searches": [
     {
       "name": "Meermin 44",
@@ -31,5 +26,4 @@
     }
   ]
 }
-
 
