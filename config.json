@@ -4,15 +4,18 @@
   "poll_interval_seconds": 60,
   "vinted_domain": "www.vinted.fr",
   "searches": [
-    {
-      "name": "Exemple - Baskets Nike taille 42",
-      "keywords": "nike air max",
-      "price_min": 10,
-      "price_max": 60,
-      "size_ids": [],
-      "brand_ids": [],
-      "status_ids": [],
-      "catalog_ids": []
-    }
+
+
+{
+  "name": "Meermin 44",
+  "keywords": "meermin",
+  "price_min": 0,
+  "price_max": 120,
+  "size_ids": [788],
+  "brand_ids": [347638],
+  "status_ids": [1, 6],
+  "catalog_ids": []
+}
   ]
 }
+
