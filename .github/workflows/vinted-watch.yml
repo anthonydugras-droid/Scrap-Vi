@@ -6,7 +6,7 @@ on:
     # crons sont "best effort" (peuvent avoir un peu de retard aux heures
     # de forte charge). Modifie ce cron si tu veux une autre fréquence,
     # ex: "*/5 * * * *" pour toutes les 5 minutes.
-    - cron: "*/15 * * * *"
+    - cron: "*/5 * * * *"
   workflow_dispatch: {}  # permet de le lancer manuellement depuis l'onglet Actions
 
 permissions:
